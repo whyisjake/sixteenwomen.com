@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './theme/css/bootstrap.css';
+import './theme/css/font-awesome.css';
+import './theme/css/replacer.css';
+import './theme/css/site-style.css';
+
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
