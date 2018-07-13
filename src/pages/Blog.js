@@ -5,6 +5,7 @@ import axios from "axios";
 
 import getTags from "../helpers/helpers";
 
+import Footer from "../components/footer";
 import Rubric from "../components/rubric";
 import Hed from "../components/hed";
 import Dek from "../components/dek";
@@ -87,6 +88,7 @@ class Blog extends React.Component {
           </div>
         </div>
         <TagCloud tags={tags} />
+        <Footer />
       </div>
     );
   }

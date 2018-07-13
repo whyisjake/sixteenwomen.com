@@ -276,7 +276,7 @@ function Blog(props) {
                     <a
                       className="page-link text-secondary"
                       href="https://www.google.com"
-                      tabindex="-1"
+                      tabIndex="-1"
                     >
                       <i className="fa fa-angle-left mx-1" />
                     </a>
