@@ -5,7 +5,7 @@ class Hed extends React.Component {
     return (
       <div>
         {this.props.text && (
-          <p class="lead text-secondary mb-4">{this.props.text}</p>
+          <p className="lead text-secondary mb-4">{this.props.text}</p>
         )}
       </div>
     );

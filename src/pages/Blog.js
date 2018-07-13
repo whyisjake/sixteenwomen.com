@@ -5,7 +5,6 @@ import Dek from "../components/dek";
 import DateTime from "../components/dateTime";
 
 function Blog(props) {
-  console.log("Blog Props", props);
   return (
     <div>
       <div className="pt-3">
