@@ -5,7 +5,10 @@ class Rubric extends React.Component {
     return (
       <h6 className="mb-3">
         {this.props.text && (
-          <span className="badge badge-secondary">{this.props.text}</span>
+          <span
+            className="badge badge-secondary"
+            dangerouslySetInnerHTML={{ __html: this.props.text }}
+          />
         )}
       </h6>
     );

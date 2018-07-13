@@ -21,18 +21,23 @@ class Blog extends React.Component {
   }
 
   componentDidMount = () => {
-    const id = this.props.match.params.slug;
+    const slug = this.props.match.params.slug;
 
     const route = wp
       .posts()
-      .id(id)
+      .slug(slug)
       .embed()
       .toString();
 
-    axios.get(route).then(res => {
-      const post = res.data;
-      this.setState({ post });
-    });
+    axios
+      .get(route)
+      .then(res => {
+        const post = res.data[0];
+        this.setState({ post });
+      })
+      .catch(err => {
+        this.setState({ error: err });
+      });
   };
 
   componentWillUnmount = () => {};
@@ -61,11 +66,6 @@ class Blog extends React.Component {
             </div>
           </div>
         </div>
-        <img
-          className="w-100 my-4 pb-3"
-          src="/images/photo-40.jpg"
-          alt="asdf"
-        />
         <div className="container d-flex flex-column py-5">
           <div className="row my-auto my-5 pb-2">
             <div
