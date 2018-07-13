@@ -66,7 +66,7 @@ class Blog extends React.Component {
             </div>
           </div>
         </div>
-        <div className="container d-flex flex-column py-5">
+        <div className="container d-flex flex-column py-1">
           <div className="row my-auto my-5 pb-2">
             <div
               className="col-lg-8 col-md-10 col-sm-12 mx-auto"
