@@ -40,6 +40,7 @@ const Home = () => (
 const Episodes = ({ match }) => (
   <div className="container">
     <h2>Episodes</h2>
+    <p><a href="https://www.instagram.com/sixteenwomen/">Instagram</a></p>
     <ul>
       <li>
         Episode 1: Christina Marie Riggs
