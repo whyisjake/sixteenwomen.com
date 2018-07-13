@@ -3,10 +3,14 @@ import _ from "lodash";
 import WPAPI from "wpapi";
 import axios from "axios";
 
+import getTags from "../helpers/helpers";
+
 import Rubric from "../components/rubric";
 import Hed from "../components/hed";
 import Dek from "../components/dek";
 import DateTime from "../components/dateTime";
+import Lede from "../components/lede";
+import TagCloud from "../components/tag-cloud";
 
 const wp = new WPAPI({ endpoint: "http://admin.sixteenwomen.com/wp-json" });
 
@@ -43,14 +47,15 @@ class Blog extends React.Component {
   componentWillUnmount = () => {};
 
   render() {
-    console.log("Render State", this.state);
     const { isLoading, post } = this.state;
-    console.log("State", post);
     let hed = _.get(post, "title.rendered");
     let body = _.get(post, "content.rendered");
     let rubric = _.get(post, "_embedded.wp:term.0.0.name");
     let rawExcerpt = _.get(post, "excerpt.rendered");
     let excerpt = rawExcerpt === body ? "" : rawExcerpt;
+    let ledeImg = _.get(post, "_embedded.wp:featuredmedia[0]");
+    let tags = getTags(_.get(post, "_embedded.wp:term"), "post_tag");
+
     return (
       <div>
         {isLoading && <h1>Loading</h1>}
@@ -66,6 +71,13 @@ class Blog extends React.Component {
             </div>
           </div>
         </div>
+        {ledeImg && (
+          <Lede
+            src={ledeImg.source_url}
+            title={ledeImg.title.rendered}
+            alt={ledeImg.alt_text}
+          />
+        )}
         <div className="container d-flex flex-column py-1">
           <div className="row my-auto my-5 pb-2">
             <div
@@ -74,6 +86,7 @@ class Blog extends React.Component {
             />
           </div>
         </div>
+        <TagCloud tags={tags} />
       </div>
     );
   }

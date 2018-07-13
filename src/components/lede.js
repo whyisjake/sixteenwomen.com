@@ -1,17 +1,19 @@
 import React from "react";
 
-class Hed extends React.Component {
+class Lede extends React.Component {
   render() {
-    const lede = this.props.lede;
-    const alt = this.props.alt;
     return (
       <div>
-        {this.props.text && (
-          <img className="w-100 my-4 pb-3" src={lede} alt={alt} />
+        {this.props.src && (
+          <img
+            className="w-100 my-4 pb-3"
+            alt={this.props.alt}
+            {...this.props}
+          />
         )}
       </div>
     );
   }
 }
 
-export default Hed;
+export default Lede;
