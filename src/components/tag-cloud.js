@@ -2,7 +2,6 @@ import React from "react";
 
 class Hed extends React.Component {
   render() {
-    console.log(this.props);
     const tags = this.props.tags;
     const listItems = tags.map(tag => (
       <span key={tag.id} className="badge badge-pill badge-primary">

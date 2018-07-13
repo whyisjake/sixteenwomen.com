@@ -1,7 +1,6 @@
 import React from "react";
 
-function Blog(props) {
-  console.log(props);
+function Archive(props) {
   return (
     <div className="archive">
       <div className="pt-5">
@@ -323,4 +322,4 @@ function Blog(props) {
   );
 }
 
-export default Blog;
+export default Archive;
