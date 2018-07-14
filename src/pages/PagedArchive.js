@@ -8,7 +8,7 @@ import ArchiveHeader from "../components/archive-header";
 
 const wp = new WPAPI({ endpoint: "https://admin.sixteenwomen.com/wp-json" });
 
-class Archive extends React.Component {
+class PagedArchive extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,11 +19,17 @@ class Archive extends React.Component {
   }
 
   componentDidMount = () => {
+    const number = this.props.match.params.number;
+    console.log(number);
+
     const route = wp
       .posts()
+      .page(number)
       .perPage(9)
       .embed()
       .toString();
+
+    console.log("route", route);
 
     axios
       .get(route)
@@ -63,4 +69,4 @@ class Archive extends React.Component {
   };
 }
 
-export default Archive;
+export default PagedArchive;
