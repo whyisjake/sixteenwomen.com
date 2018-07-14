@@ -13,7 +13,7 @@ import DateTime from "../components/dateTime";
 import Lede from "../components/lede";
 import TagCloud from "../components/tag-cloud";
 
-const wp = new WPAPI({ endpoint: "http://admin.sixteenwomen.com/wp-json" });
+const wp = new WPAPI({ endpoint: "https://admin.sixteenwomen.com/wp-json" });
 
 class Blog extends React.Component {
   constructor(props) {
