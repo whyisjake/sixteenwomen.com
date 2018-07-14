@@ -6,7 +6,6 @@ import CardImg from "./card-img";
 
 class Card extends React.Component {
   render() {
-    console.log(this.props);
     const middle = this.props.middle ? "mx-5" : "";
     const url = `/episode/${this.props.slug}`;
     const title = _.get(this, "props.title.rendered");

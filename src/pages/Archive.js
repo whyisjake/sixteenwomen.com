@@ -12,15 +12,24 @@ class Archive extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      activePage: 1,
       posts: [],
       isLoading: false,
-      error: {}
+      error: {},
+      meta: {}
     };
   }
 
   componentDidMount = () => {
+    this.updatePostState();
+  };
+
+  componentWillUnmount = () => {};
+
+  updatePostState = () => {
     const route = wp
       .posts()
+      .page(this.state.activePage)
       .perPage(9)
       .embed()
       .toString();
@@ -29,14 +38,16 @@ class Archive extends React.Component {
       .get(route)
       .then(res => {
         const posts = res.data;
-        this.setState({ posts });
+        const meta = {
+          total: _.get(res, "headers.x-wp-total"),
+          totalPages: _.get(res, "headers.x-wp-totalpages")
+        };
+        this.setState({ posts, meta });
       })
       .catch(err => {
         this.setState({ error: err });
       });
   };
-
-  componentWillUnmount = () => {};
 
   render = () => {
     const posts = this.state.posts;
