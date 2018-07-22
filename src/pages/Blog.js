@@ -67,7 +67,7 @@ class Blog extends React.Component {
                 <Rubric text={rubric} />
                 <Hed text={hed} />
                 <Dek text={excerpt} />
-                <DateTime dateTime={post.date} />
+                <DateTime dateTime={post.modified} />
               </div>
             </div>
           </div>

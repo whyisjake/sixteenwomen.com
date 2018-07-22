@@ -46,6 +46,11 @@ export default class Example extends React.Component {
                   Episodes
                 </Link>
               </NavItem>
+              <NavItem>
+                <Link className="nav-link" to="/player">
+                  Player
+                </Link>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

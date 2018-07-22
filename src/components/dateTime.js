@@ -9,7 +9,7 @@ class Rubric extends React.Component {
         {this.props.dateTime && (
           <p className="text-secondary small">
             Last updated:{" "}
-            <Moment date={dateToFormat} format="MM/DD/YYYY \a\t HH:MM a" />
+            <Moment date={dateToFormat} format="MM/DD/YYYY \a\t h:MM a" />
           </p>
         )}
       </h6>

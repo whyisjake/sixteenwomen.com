@@ -60,9 +60,23 @@ hr {
 }
 
 @media (max-width: 1200px) {
-  
+
   .navbar {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
     background-color: #fff; }
 
+}
+
+@font-face {
+  src: url('../fonts/Brother\ In\ Crime.otf');
+  font-family: 'BrotherInCrime';
+}
+
+@font-face {
+  src: url('../fonts/Brother\ In\ Crime.ttf');
+  font-family: 'BrotherInCrime';
+}
+
+.navbar-brand {
+  font-family: "BrotherInCrime";
 }
