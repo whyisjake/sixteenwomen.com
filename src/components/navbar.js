@@ -9,7 +9,7 @@ import {
   NavItem
 } from "reactstrap";
 
-export default class Example extends React.Component {
+export default class NavBar extends React.Component {
   constructor(props) {
     super(props);
 

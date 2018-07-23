@@ -1,7 +1,7 @@
 import React from "react";
 import Moment from "react-moment";
 
-class Rubric extends React.Component {
+class DateTime extends React.Component {
   render() {
     const dateToFormat = new Date(this.props.dateTime);
     return (
@@ -17,4 +17,4 @@ class Rubric extends React.Component {
   }
 }
 
-export default Rubric;
+export default DateTime;

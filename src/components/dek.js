@@ -1,6 +1,6 @@
 import React from "react";
 
-class Hed extends React.Component {
+class Dek extends React.Component {
   render() {
     return (
       <div>
@@ -15,4 +15,4 @@ class Hed extends React.Component {
   }
 }
 
-export default Hed;
+export default Dek;

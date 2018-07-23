@@ -1,6 +1,6 @@
 import React from "react";
 
-class Hed extends React.Component {
+class TagCloud extends React.Component {
   render() {
     const tags = this.props.tags;
     const listItems = tags.map(tag => (
@@ -20,4 +20,4 @@ class Hed extends React.Component {
   }
 }
 
-export default Hed;
+export default TagCloud;
