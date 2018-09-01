@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import _ from "lodash";
-import striptags from "striptags";
+import sanitize from "sanitize-html";
 import CardImg from "./card-img";
 
 class Card extends React.Component {
@@ -11,7 +11,10 @@ class Card extends React.Component {
     const title = _.get(this, "props.title.rendered");
     const ledeImg = _.get(this, "props._embedded.wp:featuredmedia[0]");
     const excerpt =
-      striptags(_.get(this, "props.excerpt.rendered")).substr(0, 100) + "...";
+      sanitize(_.get(this, "props.excerpt.rendered"), {
+        allowedTags: [],
+        allowedAttributes: []
+      }).substr(0, 100) + "...";
     return (
       <div className={"card border rounded " + middle}>
         <Link to={url}>
