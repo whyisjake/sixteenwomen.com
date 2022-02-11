@@ -1,5 +1,6 @@
 {
   "name": "sixteenwomen.com",
+  "homepage": "https://sixteenwomen.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,7 @@
     "eslint-plugin-import": "^2.6.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
+    "gh-pages": "^3.2.3",
     "moment": "^2.22.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -24,6 +26,8 @@
     "wpapi": "^1.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
